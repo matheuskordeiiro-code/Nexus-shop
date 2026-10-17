@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="NEXUS Shop — encontre produtos para o seu estilo, com recomendações simples e inteligentes.">
+<title>NEXUS Shop — escolha melhor</title>
+<style>
+:root{--bg:#080d1b;--panel:#10182b;--panel2:#141f36;--line:#26334f;--text:#f4f7ff;--muted:#a8b4ce;--mint:#72f0c1;--blue:#7da7ff;--pink:#c7a1ff;--danger:#ffb3b3;--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#17244b 0,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.08em}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,var(--mint),var(--blue));display:grid;place-items:center;color:#07101c;font-weight:1000;font-size:20px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.18em;font-weight:700}.nav{display:flex;gap:18px;color:var(--muted);font-size:14px}.nav a{text-decoration:none}.nav a:hover{color:var(--mint)}.pill{border:1px solid #35516c;background:#11233a;color:var(--mint);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800;display:inline-flex;gap:7px;align-items:center}
+.hero{padding:54px 0 34px;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}.eyebrow{color:var(--mint);text-transform:uppercase;letter-spacing:.17em;font-size:12px;font-weight:900}h1{font-size:clamp(38px,6vw,66px);line-height:1.02;letter-spacing:-.045em;margin:15px 0 18px}.gradient{background:linear-gradient(90deg,var(--mint),var(--blue),var(--pink));color:transparent;background-clip:text}.hero p{color:var(--muted);font-size:17px;max-width:600px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.btn{appearance:none;border:0;border-radius:12px;padding:12px 17px;background:linear-gradient(110deg,var(--mint),#9de9ff);color:#07101c;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn.secondary{background:var(--panel2);border:1px solid var(--line);color:var(--text)}.btn:focus,input:focus,select:focus{outline:2px solid var(--mint);outline-offset:2px}.hero-card{border:1px solid #304365;background:linear-gradient(145deg,#162444,#0e1729);border-radius:28px;padding:24px;box-shadow:0 24px 70px #0005;position:relative;overflow:hidden}.hero-card:after{content:"";position:absolute;width:180px;height:180px;right:-65px;top:-75px;background:#72f0c11c;border-radius:50%}.mini-label{color:var(--muted);font-size:12px}.mock-chat{margin-top:16px;display:grid;gap:12px}.bubble{padding:13px 15px;border-radius:15px;max-width:92%;font-size:14px}.bubble.user{background:#23365b;margin-left:auto}.bubble.ai{background:#102b2b;border:1px solid #24534c;color:#dcfff3}.spark{font-size:22px}
+.section{padding:35px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}.section h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.03em;margin:7px 0}.section-head p{color:var(--muted);margin:0}.search-row{display:flex;gap:10px;margin:18px 0 14px}.field{width:100%;background:#0e1729;border:1px solid var(--line);border-radius:12px;padding:13px 14px;color:var(--text);font:inherit}.search-row input{flex:1;min-width:0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0 20px}.chip{border:1px solid var(--line);background:#111a2c;color:var(--muted);border-radius:999px;padding:8px 13px;cursor:pointer}.chip.active{border-color:var(--mint);background:#12302e;color:var(--mint)}
+.recommender{border:1px solid #2b4560;background:linear-gradient(130deg,#101b31,#111a2a);border-radius:var(--radius);padding:22px;margin:20px 0 28px}.recommend-grid{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end}.label{display:block;color:var(--muted);font-size:12px;font-weight:800;margin:0 0 7px}.hint{font-size:12px;color:var(--muted);margin-top:10px}.result-note{display:none;margin-top:14px;border:1px solid #2a6655;background:#0e2827;padding:12px 14px;border-radius:12px;color:#d8fff0;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.product{border:1px solid var(--line);background:linear-gradient(160deg,#121c31,#0d1425);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .18s,border-color .18s}.product:hover{transform:translateY(-3px);border-color:#4d6d8f}.product-art{height:150px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#283c60,#111a2d 70%);font-size:60px;position:relative}.product-art span{filter:drop-shadow(0 10px 12px #0007)}.tag{position:absolute;left:12px;top:12px;border:1px solid #3b506d;background:#10192acc;color:var(--mint);font-size:10px;font-weight:900;border-radius:999px;padding:5px 8px}.product-body{padding:15px;display:flex;flex-direction:column;flex:1}.category{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:900}.product h3{font-size:17px;margin:6px 0}.product p{font-size:13px;color:var(--muted);margin:0 0 14px}.product-foot{margin-top:auto}.price{font-size:21px;font-weight:900}.price small{font-size:11px;color:var(--muted);font-weight:500;display:block}.product .btn{width:100%;margin-top:12px}.demo{font-size:11px;color:#ffdca0;margin-top:8px}.empty{grid-column:1/-1;padding:30px;border:1px dashed var(--line);border-radius:16px;color:var(--muted);text-align:center}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.how{padding:19px;border:1px solid var(--line);border-radius:17px;background:#0d1526}.how .num{font-size:12px;color:var(--mint);font-weight:900}.how h3{margin:7px 0}.how p{font-size:13px;color:var(--muted);margin:0}.notice{border:1px solid #5d4d31;background:#241d13;color:#ffe6ba;border-radius:14px;padding:14px 16px;font-size:13px;margin:20px 0}.footer{border-top:1px solid var(--line);margin-top:35px;padding:26px 0 40px;color:var(--muted);font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a{color:var(--mint)}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);width:min(92%,520px);background:#e9fff6;color:#092018;padding:14px 16px;border-radius:14px;box-shadow:0 12px 40px #0008;display:none;z-index:10;font-size:14px;font-weight:700}.toast.show{display:block}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:30px}.hero-card{max-width:600px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.recommend-grid{grid-template-columns:1fr 1fr}.recommend-grid .btn{grid-column:1/-1}.how-grid{grid-template-columns:1fr}.nav{gap:10px}.nav a:nth-child(2){display:none}}
+@media(max-width:480px){.topbar{align-items:flex-start}.nav{font-size:12px;gap:8px;flex-wrap:wrap;justify-content:flex-end}.brand{font-size:13px}.hero p{font-size:15px}.grid{grid-template-columns:1fr 1fr;gap:9px}.product-art{height:112px;font-size:45px}.product-body{padding:11px}.product h3{font-size:14px}.product p{font-size:12px}.price{font-size:18px}.product .btn{font-size:12px;padding:10px 8px}.recommend-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.hero-card{padding:18px}}
+</style>
+</head>
+<body>
+<header class="wrap topbar">
+  <a class="brand" href="#" aria-label="NEXUS Shop início" style="text-decoration:none">
+    <span class="logo">N</span><span>NEXUS SHOP<small>ESCOLHAS MAIS INTELIGENTES</small></span>
+  </a>
+  <nav class="nav" aria-label="Navegação">
+    <a href="#catalogo">Produtos</a><a href="#recomendador">Recomendador IA</a><a href="#sobre">Como funciona</a>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="pill">✦ SEU GUIA DE COMPRAS</span>
+      <h1>Menos procura.<br><span class="gradient">Mais escolha.</span></h1>
+      <p>Descubra produtos que combinam com seu orçamento e suas preferências. O NEXUS Shop ajuda você a comparar opções antes de comprar.</p>
+      <div class="hero-actions"><a class="btn" href="#recomendador">✦ Encontrar meu produto</a><a class="btn secondary" href="#catalogo">Explorar catálogo ↓</a></div>
+      <p style="font-size:12px;margin-top:15px">Protótipo inicial • recomendações demonstrativas • sem cobrança pelo NEXUS Shop</p>
+    </div>
+    <div class="hero-card">
+      <div class="mini-label">NEXUS ASSISTENTE <span style="float:right;color:var(--mint)">● ONLINE DEMO</span></div>
+      <div class="mock-chat">
+        <div class="bubble user">Quero acessórios para estudar, até R$ 100.</div>
+        <div class="bubble ai"><span class="spark">✦</span> Vamos procurar opções que cabem no seu orçamento. Vou considerar categoria, preço demonstrativo e utilidade.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="pill">⌕ Pesquisa guiada</span><span class="pill">◇ Preferências</span><span class="pill">↗ Links externos</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="recomendador">
+    <div class="section-head"><div><span class="eyebrow">RECOMENDAÇÃO PERSONALIZADA</span><h2>O que você está procurando?</h2><p>Conte o que precisa e receba sugestões do catálogo de demonstração.</p></div></div>
+    <div class="recommender">
+      <div class="recommend-grid">
+        <div><label class="label" for="need">Quero encontrar</label><input class="field" id="need" placeholder="Ex.: fone para estudar"></div>
+        <div><label class="label" for="budget">Meu orçamento</label><select class="field" id="budget"><option value="50">Até R$ 50</option><option value="100" selected>Até R$ 100</option><option value="200">Até R$ 200</option><option value="99999">Qualquer valor</option></select></div>
+        <div><label class="label" for="category">Categoria</label><select class="field" id="category"><option value="Todas">Todas</option><option>Acessórios</option><option>Estudos</option><option>Casa</option><option>Games</option></select></div>
+        <button class="btn" id="recommendBtn">✦ Recomendar</button>
+      </div>
+      <div class="hint">Esta versão usa regras locais, sem IA externa ou envio dos seus dados. A integração com IA generativa será adicionada depois.</div>
+      <div class="result-note" id="resultNote" role="status"></div>
+    </div>
+  </section>
+  <section class="section" id="catalogo">
+    <div class="section-head"><div><span class="eyebrow">CATÁLOGO INICIAL</span><h2>Explore as opções</h2><p>Use a busca e os filtros para encontrar o que combina com você.</p></div><span class="pill" id="count">6 itens de demonstração</span></div>
+    <div class="search-row"><input class="field" id="search" placeholder="Buscar produtos, categorias..." aria-label="Buscar produtos"><button class="btn secondary" id="clearBtn">Limpar</button></div>
+    <div class="chips" id="chips"><button class="chip active" data-cat="Todas">Todos</button><button class="chip" data-cat="Acessórios">Acessórios</button><button class="chip" data-cat="Estudos">Estudos</button><button class="chip" data-cat="Casa">Casa</button><button class="chip" data-cat="Games">Games</button></div>
+    <div class="grid" id="products" aria-live="polite"></div>
+    <div class="notice"><strong>Importante:</strong> os produtos e preços exibidos aqui são exemplos fictícios para testar o layout. Não são ofertas verificadas da Shopee. Antes de publicar, substitua os dados e cadastre links de afiliado válidos.</div>
+  </section>
+  <section class="section" id="sobre">
+    <div class="section-head"><div><span class="eyebrow">SIMPLES E TRANSPARENTE</span><h2>Como funciona</h2></div></div>
+    <div class="how-grid">
+      <article class="how"><span class="num">01 / ENCONTRE</span><h3>Conte o que precisa</h3><p>Use a busca, as categorias ou o recomendador para filtrar opções por orçamento e interesse.</p></article>
+      <article class="how"><span class="num">02 / COMPARE</span><h3>Confira os detalhes</h3><p>Leia as informações do produto e confira preço, frete, avaliações e disponibilidade na loja de destino.</p></article>
+      <article class="how"><span class="num">03 / COMPRE</span><h3>Finalize na plataforma</h3><p>Ao usar um link de afiliado válido, você será encaminhado para concluir a compra no site ou aplicativo do vendedor.</p></article>
+    </div>
+    <div class="notice"><strong>Transparência de afiliados:</strong> o NEXUS Shop poderá receber comissão por compras qualificadas feitas por links de afiliado, sem custo adicional para o comprador. Este protótipo ainda não possui links de afiliado ativos.</div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap footer-row"><div><strong style="color:var(--text)">NEXUS SHOP</strong><br>Projeto independente de descoberta de produtos.</div><div><a href="#sobre">Como funciona</a> · <a href="#catalogo">Catálogo</a><br>Não somos a Shopee nem representamos oficialmente a plataforma.</div><div>© <span id="year"></span> NEXUS Shop<br><span>Preços e disponibilidade devem ser confirmados na loja de destino.</span></div></div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+/*
+ * CATÁLOGO: antes de publicar, troque os exemplos abaixo por produtos reais
+ * e use apenas imagens/textos que você tenha permissão para reutilizar.
+ * affiliateUrl deve ser o link oficial de afiliado atribuído à sua conta.
+ */
+const products = [
+ {id:1,name:"Fone Bluetooth compacto",category:"Acessórios",price:49.90,icon:"🎧",tag:"Áudio",description:"Exemplo de produto para ouvir música e estudar.",keywords:"fone bluetooth música áudio estudo",url:""},
+ {id:2,name:"Suporte ajustável para celular",category:"Acessórios",price:29.90,icon:"📱",tag:"Praticidade",description:"Exemplo de suporte para videoaulas e chamadas.",keywords:"suporte celular telefone aula vídeo",url:""},
+ {id:3,name:"Luminária de mesa LED",category:"Estudos",price:59.90,icon:"💡",tag:"Estudos",description:"Exemplo de iluminação para a mesa de estudos.",keywords:"luminária luz led mesa leitura estudo",url:""},
+ {id:4,name:"Organizador de mesa",category:"Casa",price:39.90,icon:"🗂️",tag:"Organização",description:"Exemplo de organizador para pequenos objetos.",keywords:"organizador mesa casa escritório organização",url:""},
+ {id:5,name:"Mouse sem fio",category:"Games",price:69.90,icon:"🖱️",tag:"Setup",description:"Exemplo de acessório para computador.",keywords:"mouse sem fio pc computador games setup",url:""},
+ {id:6,name:"Caderno para anotações",category:"Estudos",price:24.90,icon:"📓",tag:"Papelaria",description:"Exemplo de caderno para planejar tarefas.",keywords:"caderno papelaria anotações escola estudos",url:""}
+];
+let activeCategory="Todas";
+const $=id=>document.getElementById(id);
+const money=n=>n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+function toast(message){$("toast").textContent=message;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),4300)}
+function render(list){
+ const root=$("products");root.innerHTML="";
+ $("count").textContent=`${list.length} ${list.length===1?"item":"itens"} demonstrativo${list.length===1?"":"s"}`;
+ if(!list.length){root.innerHTML='<div class="empty">Nenhum produto encontrado. Tente outro termo ou categoria.</div>';return}
+ list.forEach(p=>{
+  const card=document.createElement("article");card.className="product";
+  card.innerHTML=`<div class="product-art"><span>${p.icon}</span><span class="tag">${p.tag}</span></div><div class="product-body"><span class="category">${p.category}</span><h3></h3><p></p><div class="product-foot"><div class="price">${money(p.price)}<small>preço fictício para demonstração</small></div><button class="btn" type="button" data-id="${p.id}">Ver produto ↗</button><div class="demo">Exemplo — link ainda não cadastrado</div></div></div>`;
+  card.querySelector("h3").textContent=p.name;card.querySelector(".product-body p").textContent=p.description;
+  card.querySelector("button").addEventListener("click",()=>{if(p.url && p.url.startsWith("https://")){window.open(p.url,"_blank","noopener,noreferrer")}else{toast("Este é um produto demonstrativo. Cadastre um link oficial de afiliado antes de publicar.")}});
+  root.appendChild(card);
+ });
+}
+function filtered(){
+ const term=$("search").value.trim().toLocaleLowerCase("pt-BR");
+ return products.filter(p=>(activeCategory==="Todas"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.description} ${p.keywords}`).toLocaleLowerCase("pt-BR").includes(term));
+}
+$("search").addEventListener("input",()=>render(filtered()));
+$("clearBtn").addEventListener("click",()=>{$("search").value="";activeCategory="Todas";document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.dataset.cat==="Todas"));render(filtered())});
+document.querySelectorAll(".chip").forEach(chip=>chip.addEventListener("click",()=>{activeCategory=chip.dataset.cat;document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c===chip));render(filtered())}));
+$("recommendBtn").addEventListener("click",()=>{
+ const query=$("need").value.trim().toLocaleLowerCase("pt-BR"),budget=Number($("budget").value),category=$("category").value;
+ const words=query.split(/\s+/).filter(w=>w.length>2);
+ let candidates=products.filter(p=>p.price<=budget&&(category==="Todas"||p.category===category));
+ candidates=candidates.map(p=>({...p,score:words.reduce((n,w)=>n+(`${p.name} ${p.category} ${p.description} ${p.keywords}`).toLocaleLowerCase("pt-BR").includes(w)?1:0,0)}));
+ candidates.sort((a,b)=>b.score-a.score||a.price-b.price);
+ render(candidates);
+ $("resultNote").style.display="block";
+ $("resultNote").textContent=candidates.length?`Encontramos ${candidates.length} opção(ões) dentro dos filtros. Esta é uma recomendação por regras e palavras-chave, não uma IA generativa. Os produtos são fictícios.`:"Não encontramos itens com esses filtros. Aumente o orçamento ou escolha outra categoria.";
+ $("catalogo").scrollIntoView({behavior:"smooth",block:"start"});
+});
+$("year").textContent=new Date().getFullYear();
+render(products);
+</script>
+</body>
+</html>
